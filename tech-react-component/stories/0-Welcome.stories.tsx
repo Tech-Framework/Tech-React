@@ -6,7 +6,7 @@ export default {
 
 export const Introduction = () => (
   <div>
-    <h1>Tech React Component</h1>
+    <h1>Tech Framework - React Module</h1>
   </div>
 );
 

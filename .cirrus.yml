@@ -1,0 +1,11 @@
+container:
+  image: node:latest
+
+check_task:
+  node_modules_cache:
+    folder: tech-react-component/node_modules
+    fingerprint_script: cat tech-react-component/package-lock.json
+    populate_script: npm ci --prefix tech-react-component
+  matrix:
+    - name: Build
+      build_script: cd tech-react-component && npm run build 

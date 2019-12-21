@@ -1,11 +1,13 @@
-import React from 'react';
-import { FieldProps } from 'formik';
+import * as React from 'react';
+import { TechAutocomplete } from 'component/autocomplete/TechAutocomplete';
+import { TechAutocompleteFieldProps } from './TechAutocompleteFieldProps';
   
-export class TechAutocompleteField extends React.Component<FieldProps>{
+export class TechAutocompleteField extends React.Component<TechAutocompleteFieldProps>{
 
     render(){
+        const {field, form, meta, ...otherProps} = this.props;
         return (
-            <input {...this.props.field}/>
+            <TechAutocomplete field={field} {...otherProps}/>
         );
     }
 

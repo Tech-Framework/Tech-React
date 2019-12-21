@@ -1,0 +1,24 @@
+version: 2.1
+jobs: 
+  build: 
+    working_directory: ~/tech-react/tech-react-component
+    docker:
+      - image: circleci/node:12.11.1
+    steps:
+      - checkout:
+          path: ~/tech-react
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run: 
+          name: install-npm
+          command: npm install 
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/tech-react/tech-react-component/node_modules
+      - run: 
+          name: install-npm
+          command: npm run build 

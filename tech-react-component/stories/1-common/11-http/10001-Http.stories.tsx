@@ -1,20 +1,27 @@
 import * as React from 'react';
-import { withTech } from '../src/common/withTech';
-import { TechProps } from '../src/common/TechProps';
-import { TechProvider } from 'common/TechProvider';
 import { httpClient } from 'http/httpClient';
 import MockAdapter  from 'axios-mock-adapter';
 import { action } from '@storybook/addon-actions';
+import { TechProps } from 'props/TechProps';
+import { AxiosInstance } from 'axios';
+import { Provider, inject } from 'mobx-react';
 
 export default {
-    title: 'Http',
+    title: 'Common|Axio/Http Client',
 };
 
-@(withTech() as any)
+@inject('techStore')
 class TestHttpClientComponent extends React.Component<TechProps, any> {
     
+    private httpClient?: AxiosInstance;
+
+    constructor(props: TechProps){
+        super(props);
+        this.httpClient = this.props.techAppStore?.httpClient;
+    }
+
     callSomething(){
-        this.props.httpClient?.get('testing').then((val)=>{
+        this.httpClient?.get('testing').then((val)=>{
             action('http reponse')(val.data);
         })
     }
@@ -32,8 +39,8 @@ const mockHttpClientAdapter = new MockAdapter(httpClient)
 mockHttpClientAdapter.onGet('testing').reply(200, 'testing reponse');
 
 export const HttpClientComponent = () => (
-    <TechProvider value={{httpClient: httpClient}}>
+    <Provider techStore={{httpClient: httpClient}}>
         <TestHttpClientComponent/>
-    </TechProvider>
+    </Provider>
 );
   
