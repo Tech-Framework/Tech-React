@@ -1,8 +1,8 @@
 import React from 'react';
-import { TechButton } from '../src/component/button/TechButton';
+import { TechButton } from 'component/button/TechButton';
 
 export default {
-  title: 'Button',
+  title: 'Component|Button/Layout',
 };
 
 export const Button = () => (
