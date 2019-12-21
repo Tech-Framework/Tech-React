@@ -1,0 +1,40 @@
+{
+  "name": "tech-react-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/preset-typescript": "^7.7.4",
+    "@material-ui/core": "^4.7.2",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addon-storysource": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "@storybook/source-loader": "^5.2.8",
+    "@types/react": "^16.9.16",
+    "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.19.0",
+    "axios-mock-adapter": "^1.17.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-react-require": "^3.1.1",
+    "core-js": "^3.4.8",
+    "formik": "^2.0.8",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.12.0",
+    "typescript": "^3.7.3"
+  }
+}
