@@ -1,4 +1,4 @@
-import { TechAutocomplete } from 'component/autocomplete/TechAutocomplete'
+import { TechAutocomplete } from '../../../src/component/autocomplete/TechAutocomplete'
 import React from 'react'
 
 export default {

@@ -5,7 +5,7 @@ import { TechProps } from 'props/TechProps';
 import { observer, inject } from 'mobx-react';
 import { AlertStore } from 'store/AlertStore';
 
-@inject('techStore')
+@inject('techAppStore')
 @observer
 export class TechAlert extends React.Component<TechProps> {
 

@@ -1,17 +1,18 @@
 import React from 'react'
 import { Provider, observer, inject } from 'mobx-react'
-import { TechAlert } from 'component/alert/TechAlert'
-import { TechAppStore } from 'store/TechAppStore'
-import { TechProps } from 'props/TechProps'
-import { AlertStore } from 'store/AlertStore'
+import { TechAlert } from '../../../src/component/alert/TechAlert'
+import { TechProps } from '../../../src/props/TechProps'
+import { TechAppStore } from '../../../src/store/TechAppStore'
+import { AlertStore } from '../../../src/store/AlertStore'
+import { TechButton } from '../../../src/component/button/TechButton';
 
 export default{
     title: 'Component|Alert/Layout',
 }
 
-const techStore = new TechAppStore();
+const techAppStore = new TechAppStore();
 
-@inject('techStore')
+@inject('techAppStore')
 @observer
 class AlertExampleComponent extends React.Component<TechProps> {
     
@@ -25,24 +26,24 @@ class AlertExampleComponent extends React.Component<TechProps> {
     render(){
         return(
             <div>
-                <button onClick={()=>{this.alertStore?.alert('testing')}}>
+                <TechButton onClick={()=>{this.alertStore?.alert('testing')}}>
                     Alert Once
-                </button>
-                <button onClick={()=>{
+                </TechButton>
+                <TechButton onClick={()=>{
                     this.alertStore?.alert('testing1');
                     this.alertStore?.alert('testing2');
                     this.alertStore?.alert('testing3');
                 }}>
                     Alert Mutliple
-                </button>
+                </TechButton>
             </div>
         )
     }
 }
 
 export const example = () =>(
-    <Provider techStore={techStore}>
+    <Provider techAppStore={techAppStore}>
         <AlertExampleComponent></AlertExampleComponent>
         <TechAlert/>
     </Provider>
-)
+);

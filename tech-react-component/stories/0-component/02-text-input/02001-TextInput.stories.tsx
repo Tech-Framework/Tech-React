@@ -1,5 +1,5 @@
 import React from 'react';
-import { TechTextInput } from 'component/text-input/TechTextInput';
+import { TechTextInput } from '../../../src/component/text-input/TechTextInput';
 
 
 export default {

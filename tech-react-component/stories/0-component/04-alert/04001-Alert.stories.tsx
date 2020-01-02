@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dialog, DialogContent, DialogActions } from '@material-ui/core'
+import { TechButton } from '../../../src/component/button/TechButton';
 
 export default {
     title: 'Component|Alert/Material UI',
@@ -21,9 +22,9 @@ class DialogExample extends React.Component<any, DialogStateType> {
     render(){
         return (
             <div>
-                <button onClick={()=>{this.setState({open: true})}}>
+                <TechButton onClick={()=>{this.setState({open: true})}}>
                     Show Alert
-                </button>
+                </TechButton>
                 <Dialog 
                     open={this.state.open}>
                     <DialogContent>Testing</DialogContent>
