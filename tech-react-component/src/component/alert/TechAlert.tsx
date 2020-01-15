@@ -4,6 +4,7 @@ import { DialogContent, DialogContentText, DialogActions } from '@material-ui/co
 import { TechProps } from 'props/TechProps';
 import { observer, inject } from 'mobx-react';
 import { AlertStore } from 'store/AlertStore';
+import { TechButton } from '../button/TechButton';
 
 @inject('techAppStore')
 @observer
@@ -24,9 +25,9 @@ export class TechAlert extends React.Component<TechProps> {
                         {this.alertStore?.message}
                     </DialogContentText>
                     <DialogActions>
-                        <button onClick={()=>{this.alertStore?.next()}}>
+                        <TechButton onClick={()=>{this.alertStore?.next()}}>
                             ok
-                        </button>
+                        </TechButton>
                     </DialogActions>
                 </DialogContent>
             </Dialog>
